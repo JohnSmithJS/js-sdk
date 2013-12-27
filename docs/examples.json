@@ -99,17 +99,5 @@
 				"icon": "[EXAMPLES-URL]/resources/images/default-guide.png"
 			}
 		]
-	},
-	{
-		"title": "Reference Apps",
-		"items": [
-			{
-				"name": "comments-sample",
-				"title": "Comments (Reference)",
-				"description": "Example of a simple app built using the \"How to develop an app\" guide.",
-				"url": "apps/comments-sample/index.html",
-				"icon": "[EXAMPLES-URL]/resources/images/default-guide.png"
-			}
-		]
 	}
 ]

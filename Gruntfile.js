@@ -81,8 +81,7 @@ module.exports = function(grunt) {
 			"third-party/**/*.html"
 		],
 		"demo": ["**/*"],
-		"tests": ["**/*"],
-		"apps": ["**/*"]
+		"tests": ["**/*"]
 	};
 
 	var destinations = {
@@ -502,18 +501,12 @@ module.exports = function(grunt) {
 							"src": "**",
 							"cwd": "<%= dirs.dest %>/v<%= pkg.versions.major %>/",
 							"dest": "<%= release.options.remoteRoot %>/sdk/v<%= pkg.versions.full %>/"
-						},
-						"apps": {
-							"src": "**",
-							"cwd": "<%= dirs.dist %>/apps/",
-							"dest": "<%= release.options.remoteRoot %>/apps/"
 						}
 					},
 					"purgeTitle": "SDK",
 					"purgePaths": [
 						"/sdk/v<%= pkg.versions.major %>/",
-						"/sdk/v<%= pkg.versions.full %>/",
-						"/apps/"
+						"/sdk/v<%= pkg.versions.full %>/"
 					],
 					"beforeDeploy": ["patch:loader-release:stable"],
 					"afterDeploy": shared.config("env") === "staging" ? [] : ["docs", "docs-release"]
@@ -538,7 +531,7 @@ module.exports = function(grunt) {
 			"purge": {
 				"options": {
 					"skipBuild": true,
-					"purgePaths": ["/sdk/", "/apps/"]
+					"purgePaths": ["/sdk/"]
 				}
 			},
 			"pages": {
@@ -579,7 +572,6 @@ module.exports = function(grunt) {
 					"src/**",
 					"demo/**",
 					"tests/**",
-					"apps/**",
 					"config/**",
 					"tools/**"
 				],

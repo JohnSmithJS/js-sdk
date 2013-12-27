@@ -65,7 +65,6 @@ module.exports = function(grunt) {
 					"copy:tests",
 					"concat:tests/units",
 					"clean:tests/units",
-					"copy:apps",
 					"copy:redirect-page"
 				];
 				break;
@@ -137,19 +136,6 @@ module.exports = function(grunt) {
 					}
 				};
 			});
-			spec["apps"] = {
-				"files": [{
-					"expand": true,
-					"cwd": "apps",
-					"src": grunt.config("sources.apps"),
-					"dest": "<%= dirs.dist %>/apps"
-
-				}],
-				"options": {
-					"processContent": shared.replacePlaceholdersOnCopy,
-					"processContentExclude": "**/*.{png,jpg,jpeg,gif}"
-				}
-			};
 			spec["redirect-page"] = {
 				"files": [{
 					"src": "<%= dirs.src %>/version-redirect.html",
